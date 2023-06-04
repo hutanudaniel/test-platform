@@ -2,9 +2,9 @@ import React, { useState} from "react";
 import { Amplify, API, graphqlOperation, Auth } from "aws-amplify";
 
 function SignIn () {
-    const [username, setUsername] = useState(null);
+    const [username, setUsername] = useState("");
     // const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [password, setPassword] = useState("");
 
     const handleName = (event) =>{
         setUsername(event.target.value)

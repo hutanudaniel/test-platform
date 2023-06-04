@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 
 function VerificationPage() {
-  const [code, setCode] = useState(null);
-  const [username, setUsername] = useState(null);
+  const [code, setCode] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleCode = (event) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ function VerificationPage() {
       <br />
       <input type="email" value={username} onChange={handleUsername} />
       <br />
-      
+
       <label>Verification Code:</label>
       <br />
       <input type="text" value={code} onChange={handleCode} />

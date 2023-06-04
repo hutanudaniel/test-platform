@@ -10,6 +10,7 @@ import { createTodo } from './mutations';
 import { listTodos } from './queries';
 import Register from './components/Register/register';
 import SignIn from './components/Signin/signin';
+import Signout from './components/Signout/signout';
 import VerificationPage from './components/VerificationPage/verificationPage';
 
 const todo = { name: 'My Todo', description: 'This is my todo' };
@@ -69,10 +70,19 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      <br/>
+
       <Register/>
+      <br/>
+
       <VerificationPage/>
+      <br/>
+
       ---------------------------
       <SignIn/>
+      <Signout/>
+      <br/>
+
     </div>
   );
 }

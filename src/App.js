@@ -12,6 +12,13 @@ import Register from "./components/Register/register";
 import SignIn from "./components/Signin/signin";
 import Signout from "./components/Signout/signout";
 import VerificationPage from "./components/VerificationPage/verificationPage";
+import { BrowserView, MobileView } from "react-device-detect";
+import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import PersonIcon from "@material-ui/icons/Person";
+import { Link } from "react-router-dom";
 
 const todo = { name: "My Todo", description: "This is my todo" };
 
@@ -25,6 +32,55 @@ const todo = { name: "My Todo", description: "This is my todo" };
 
 //   console.log(resp, "++++")
 // }
+
+function DesktopNavigation() {
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
+function MobileNavigation() {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <BottomNavigation
+      value={value}
+      onChange={handleChange}
+      className="mobile-navigation"
+    >
+      <BottomNavigationAction
+        label="Home"
+        icon={<HomeIcon />}
+        component={Link}
+        to="/home"
+      />
+      <BottomNavigationAction
+        label="Search"
+        icon={<SearchIcon />}
+        component={Link}
+        to="/home"
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        icon={<FavoriteIcon />}
+        component={Link}
+        to="/comp1"
+      />
+      <BottomNavigationAction
+        label="Profile"
+        icon={<PersonIcon />}
+        component={Link}
+        to="/comp1"
+      />
+    </BottomNavigation>
+  );
+}
 
 function App() {
   const [date, setDate] = useState(null);
@@ -64,7 +120,12 @@ function App() {
   return (
     <div className="main">
       <BrowserRouter>
-        <Header />
+        <BrowserView>
+          <DesktopNavigation />
+        </BrowserView>
+        <MobileView>
+          <MobileNavigation />
+        </MobileView>
         <Routes>
           <Route path="home" element={<Home />} />
           <Route path="my-account" element={<MyAccount />} />

@@ -15,10 +15,10 @@ import VerificationPage from "./components/VerificationPage/verificationPage";
 import { BrowserView, MobileView } from "react-device-detect";
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import HomeIcon from "@material-ui/icons/Home";
-import SearchIcon from "@material-ui/icons/Search";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonIcon from "@material-ui/icons/Person";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
 
 const todo = { name: "My Todo", description: "This is my todo" };

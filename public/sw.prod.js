@@ -60,8 +60,8 @@ self.addEventListener("install", function (event) {
       "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-256x256.png",
       "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-384x384.png",
       "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-512x512.png",
-      "https://main.d2czrm0d7jxybl.amplifyapp.com/static/js/main.779626b1.js",
-      "https://main.d2czrm0d7jxybl.amplifyapp.com/static/css/main.bd569943.css",
+      "https://main.d2czrm0d7jxybl.amplifyapp.com/static/js/main.js",
+      "https://main.d2czrm0d7jxybl.amplifyapp.com/static/css/main.css",
       "https://main.d2czrm0d7jxybl.amplifyapp.com/manifest.prod.json",
     ];
   }

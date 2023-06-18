@@ -32,7 +32,7 @@ self.addEventListener("install", function (event) {
       "/my-account",
       // "/ws",
       "/static/js/bundle.js",
-      "/manifest.prod.json",
+      "/manifest.dev.json",
       "/favicon.ico",
       "/index.html",
       // '/static/js/bundle.js',

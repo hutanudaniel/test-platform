@@ -71,13 +71,13 @@ function MobileNavigation() {
         label="Favorites"
         icon={<FavoriteIcon />}
         component={Link}
-        to="/comp1"
+        to="/my-account"
       />
       <BottomNavigationAction
         label="Profile"
         icon={<PersonIcon />}
         component={Link}
-        to="/comp1"
+        to="/my-account"
       />
     </BottomNavigation>
   );

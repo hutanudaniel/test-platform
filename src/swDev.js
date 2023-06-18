@@ -4,7 +4,7 @@ export default function swDev() {
 
   if(process.env.NODE_ENV === 'production')
   {
-    swUrl = "https://agapealex.github.io/test6/sw.prod.js"
+    swUrl = "https://main.d2czrm0d7jxybl.amplifyapp.com/sw.prod.js"
   }
   else{
     swUrl = "http://localhost:3000/sw.dev.js"

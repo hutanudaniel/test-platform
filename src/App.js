@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { createTodo } from "./mutations";
 import { listTodos } from "./queries";
 import Register from "./components/Register/register";

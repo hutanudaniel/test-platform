@@ -6,22 +6,22 @@ self.addEventListener("install", function (event) {
   let urlsToCache = [];
 
     urlsToCache = [
-      "/",
-      "/home",
-       "/my-account",
-      // "/ws",
-      "/static/js/bundle.js",
-      "/manifest.dev.json",
-      "/favicon.ico",
-      "/index.html",
-      "/sw.dev.js",
-      "/images/icons/app-icon-48x48.png",
-      "/images/icons/app-icon-96x96.png",
-      "/images/icons/app-icon-144x144.png",
-      "/images/icons/app-icon-192x192.png",
-      "/images/icons/app-icon-256x256.png",
-      "/images/icons/app-icon-384x384.png",
-      "/images/icons/app-icon-512x512.png",
+      // "/",
+      // "/home",
+      //  "/my-account",
+      // // "/ws",
+      // "/static/js/bundle.js",
+      // "/manifest.dev.json",
+      // "/favicon.ico",
+      // "/index.html",
+      // "/sw.dev.js",
+      // "/images/icons/app-icon-48x48.png",
+      // "/images/icons/app-icon-96x96.png",
+      // "/images/icons/app-icon-144x144.png",
+      // "/images/icons/app-icon-192x192.png",
+      // "/images/icons/app-icon-256x256.png",
+      // "/images/icons/app-icon-384x384.png",
+      // "/images/icons/app-icon-512x512.png",
     ];
    
   event.waitUntil(

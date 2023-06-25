@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 // import { createTodo } from "./mutations";
 import { listTodos } from "./queries";
 import Register from "./components/Register/register";
@@ -13,13 +13,14 @@ import SignIn from "./components/Signin/signin";
 import Signout from "./components/Signout/signout";
 import VerificationPage from "./components/VerificationPage/verificationPage";
 import { BrowserView, MobileView } from "react-device-detect";
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const todo = { name: "My Todo", description: "This is my todo" };
 
@@ -86,6 +87,8 @@ function MobileNavigation() {
 function App() {
   const [date, setDate] = useState(null);
 
+  const { user, userDetails, signOut } = useContext(AuthContext);
+
   Amplify.configure(awsExports);
 
   // useEffect(() => {
@@ -117,33 +120,51 @@ function App() {
   };
 
   console.log(date, "lista meaa");
+  debugger;
 
   return (
     <div className="main">
-      <BrowserRouter>
-        <BrowserView>
-          <DesktopNavigation />
-        </BrowserView>
-        <MobileView>
-          <MobileNavigation />
-        </MobileView>
-        <Routes>
-          <Route path="home" element={<Home />} />
-          <Route path="my-account" element={<MyAccount />} />
+      {/* {!userDetails ? ( */}
+      {/* {!user ? (
+        <SignIn />
+      ) : ( */}
+      <>
+        <BrowserRouter>
+          {user && (
+            <>
+              <BrowserView>
+                <DesktopNavigation />
+              </BrowserView>
+              <MobileView>
+                <MobileNavigation />
+              </MobileView>
+              <Routes>
+                <Route path="home" element={<Home />} />
+                <Route path="my-account" element={<MyAccount />} />
+              </Routes>
+              <br />
+              <button onClick={handleGetData}>Get data</button>
+            </>
+          )}
+
           {/* <Route path="list" element={<CarList />} />
-          <Route path="add" element={<AddCar />} /> */}
-        </Routes>
-      </BrowserRouter>
-      <br />
-      <Register />
-      <br />
-      <VerificationPage />
-      <br />
-      ---------------------------
-      <SignIn />
-      <Signout />
-      <br />
-      <button onClick={handleGetData}>Get data</button>
+              <Route path="add" element={<AddCar />} /> */}
+          <Routes>
+            <Route path="signin" element={<MyAccount />} />
+            <Route path="register" element={<Register />} />
+            <Route path="verification" element={<VerificationPage />} />
+            {/* <Route path="home" element={<Home />} />
+            <Route path="my-account" element={<MyAccount />} /> */}
+          </Routes>
+        </BrowserRouter>
+        {/* <br />
+        <Register />
+        <br /> */}
+        {/* <VerificationPage />
+        <br /> */}
+        {!user && <SignIn />}
+      </>
+      {/* )} */}
     </div>
   );
 }

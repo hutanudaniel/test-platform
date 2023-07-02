@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Amplify, API, graphqlOperation, Auth } from "aws-amplify";
-
 // import * as React from 'react';
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -15,10 +14,11 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Navigate, redirect} from "react-router-dom";
 
 function Register() {
-
   const defaultTheme = createTheme();
+//   const navigate = useNavigate(-1);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,19 +27,23 @@ function Register() {
       email: data.get("email"),
       password: data.get("password"),
     });
-
-    const { user } = await Auth.signUp({
-      username: data.get("email"),
-      password: data.get("password"),
-      attributes: {
-        email: data.get("email"), // optional
-        // other custom attributes
-      },
-      autoSignIn: {
-        // optional - enables auto sign in after user is confirmed
-        enabled: true,
-      },
-    });
+    try {
+      const { user } = await Auth.signUp({
+        username: data.get("email"),
+        password: data.get("password"),
+        attributes: {
+          email: data.get("email"), // optional
+          // other custom attributes
+        },
+        autoSignIn: {
+          // optional - enables auto sign in after user is confirmed
+          enabled: false,
+        },
+      });
+      return <Navigate to='/verification'/>;
+    } catch (err) {
+      console.log(err, "eroare la register");
+    }
   };
 
   return (
@@ -67,7 +71,7 @@ function Register() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -98,14 +102,14 @@ function Register() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
-              </Grid>
+              </Grid> */}
             </Grid>
             <Button
               type="submit"
@@ -117,8 +121,8 @@ function Register() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                <Link href="/signin" variant="body2">
+                  Ai deja un cont? Mergi la Sign in
                 </Link>
               </Grid>
             </Grid>
@@ -126,57 +130,55 @@ function Register() {
         </Box>
       </Container>
     </ThemeProvider>
-
   );
 }
 
 export default Register;
 
-  // const [username, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+// const [username, setUsername] = useState("");
+// const [email, setEmail] = useState("");
+// const [password, setPassword] = useState("");
 
-  // const handleName = (event) =>{
-  //     setUsername(event.target.value)
-  // }
+// const handleName = (event) =>{
+//     setUsername(event.target.value)
+// }
 
-  // const handleEmail = (event) =>{
-  //     setEmail(event.target.value)
-  // }
+// const handleEmail = (event) =>{
+//     setEmail(event.target.value)
+// }
 
-  // const handlePassword = (event) =>{
-  //     setPassword(event.target.value)
-  // }
+// const handlePassword = (event) =>{
+//     setPassword(event.target.value)
+// }
 
-  // const handleSubmit = async (event) =>{
-  //     event.preventDefault();
+// const handleSubmit = async (event) =>{
+//     event.preventDefault();
 
-  //     const { user } = await Auth.signUp({
-  //         username: email,
-  //         password,
-  //         attributes: {
-  //           email, // optional
-  //           // other custom attributes
-  //         },
-  //         autoSignIn: {
-  //           // optional - enables auto sign in after user is confirmed
-  //           enabled: true,
-  //         },
-  //       });
-  // }
+//     const { user } = await Auth.signUp({
+//         username: email,
+//         password,
+//         attributes: {
+//           email, // optional
+//           // other custom attributes
+//         },
+//         autoSignIn: {
+//           // optional - enables auto sign in after user is confirmed
+//           enabled: true,
+//         },
+//       });
+// }
 
-
-    // <>
-    //     <form onSubmit={handleSubmit}>
-    //         <label>Username:</label>
-    //         <input type="text" name="username" value={username} onChange={handleName}/>
-    //         <br/>
-    //         <label >email</label>
-    //         <input type="email" name="email" value={email} onChange={handleEmail}/>
-    //         <br/>
-    //         <label>Parola</label>
-    //         <input type="password" name="password" value={password} onChange={handlePassword}/>
-    //         <br/>
-    //         <button type="submit">Creaza cont</button>
-    //     </form>
-    // </>
+// <>
+//     <form onSubmit={handleSubmit}>
+//         <label>Username:</label>
+//         <input type="text" name="username" value={username} onChange={handleName}/>
+//         <br/>
+//         <label >email</label>
+//         <input type="email" name="email" value={email} onChange={handleEmail}/>
+//         <br/>
+//         <label>Parola</label>
+//         <input type="password" name="password" value={password} onChange={handlePassword}/>
+//         <br/>
+//         <button type="submit">Creaza cont</button>
+//     </form>
+// </>

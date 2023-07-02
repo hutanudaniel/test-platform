@@ -4,8 +4,9 @@
     "apiName": "testplatform",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authtestplatform9415a2c6"
+      "mode": "API_KEY",
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
@@ -17,10 +18,8 @@
         "mode": "AWS_IAM"
       },
       {
-        "mode": "API_KEY",
-        "expirationTime": 7,
-        "apiKeyExpirationDate": "2023-07-01T09:46:13.835Z",
-        "keyDescription": ""
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authtestplatform9415a2c6"
       }
     ]
   }

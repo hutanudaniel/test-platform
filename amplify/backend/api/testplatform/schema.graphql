@@ -5,8 +5,8 @@ type Todo @model @auth(rules: [{allow: private}]) {
   ora: String
 }
 
-type User @model @auth (rules: [{allow: public}]){
+type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   username: String
   email: String
-}
+} 

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Auth } from "aws-amplify";
-import {useNavigate   } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider";
 
 
 function VerificationPage() {
   const [code, setCode] = useState("");
   const [username, setUsername] = useState("");
-  const navigate = useNavigate ();
+  const {setIsRegister, setIsVerification} = useContext(AuthContext);
+  // const navigate = useNavigate ();
 
 
   const handleCode = (event) => {
@@ -22,7 +24,9 @@ function VerificationPage() {
   async function confirmSignUp() {
     try {
       await Auth.confirmSignUp(username, code);
-      navigate('signin');
+      setIsVerification(false);
+      setIsRegister(false);
+
 
     } catch (error) {
       console.log("error confirming sign up", error);
@@ -31,7 +35,7 @@ function VerificationPage() {
 
   return (
     <>
-      <label>Username:</label>
+      <label>Email-ul tau:</label>
       <br />
       <input type="email" value={username} onChange={handleUsername} />
       <br />

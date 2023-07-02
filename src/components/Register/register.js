@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Amplify, API, graphqlOperation, Auth } from "aws-amplify";
 // import * as React from 'react';
 import Avatar from "@mui/material/Avatar";
@@ -15,10 +15,14 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Navigate, redirect} from "react-router-dom";
+import { AuthContext } from "./../../AuthProvider";
 
 function Register() {
   const defaultTheme = createTheme();
+
+  const { setIsVerification } = useContext(AuthContext);
 //   const navigate = useNavigate(-1);
+// const { setIsRegister } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -40,6 +44,7 @@ function Register() {
           enabled: false,
         },
       });
+      setIsVerification(true);
       return <Navigate to='/verification'/>;
     } catch (err) {
       console.log(err, "eroare la register");

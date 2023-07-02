@@ -45,7 +45,7 @@ function SignIn() {
   //     });
   //   };
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, setIsRegister} = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -152,7 +152,10 @@ function SignIn() {
                 </Link>
               </Grid> */}
               <Grid item>
-                <Link href="/register" variant="body2">
+                <Link href="/register" variant="body2" onClick={(e)=> {
+                    e.preventDefault();
+                    setIsRegister(true);
+                }}>
                   {"Nu ai un cont? Mergi catre Sign Up"}
                 </Link>
               </Grid>

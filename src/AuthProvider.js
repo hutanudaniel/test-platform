@@ -16,6 +16,10 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
+  const [isRegister, setIsRegister] = useState(false);
+  const [isVerification, setIsVerification] = useState(false);
+
+
 
   const [loading, setLoading] = useState(true);
 
@@ -154,6 +158,10 @@ export function AuthProvider({ children }) {
         signOut,
         signUp,
         resendSignUp,
+        setIsRegister,
+        isRegister,
+        isVerification,
+        setIsVerification
       }}
     >
       {/* {loading? <Loading/>: children} */}

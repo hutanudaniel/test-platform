@@ -84,10 +84,10 @@ function MobileNavigation() {
 }
 
 function App() {
-  const [date, setDate] = useState(null);
-  const { user, userDetails, signOut } = useContext(AuthContext);
   Amplify.configure(awsExports);
-  // const navigate = useNavigate();
+
+  const [date, setDate] = useState(null);
+  const { user, isRegister, isVerification, userDetails, signOut } = useContext(AuthContext);
 
   const handleGetData = async () => {
     await API.graphql(graphqlOperation(listTodos))
@@ -103,7 +103,13 @@ function App() {
 
   console.log(date, "lista meaa");
 
-  if(!user)
+  if(isVerification && !user){
+    return <Navigate to="/verification"  />
+  }
+  else if(isRegister && !user){
+    return <Navigate to="/register"  />
+  }
+  else if(!user)
   {
     return <Navigate to="/signin"  />
   }

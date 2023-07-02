@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate   } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MyAccount from "./components/MyAccount/MyAccount";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
@@ -19,7 +19,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
-import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const todo = { name: "My Todo", description: "This is my todo" };
@@ -85,27 +84,10 @@ function MobileNavigation() {
 }
 
 function App() {
-  const [date, setDate] = useState(null);
-
-  const { user, userDetails, signOut } = useContext(AuthContext);
-
   Amplify.configure(awsExports);
 
-  // useEffect(() => {
-  //   const func = async () => {
-  //     await API.graphql(graphqlOperation(listTodos))
-  //       .then((response) => {
-  //         const todos = response.data.listTodos.items;
-  //         setDate(todos);
-  //         console.log("Lista todo-urilor:", todos);
-  //       })
-  //       .catch((error) => {
-  //         console.log("Error get todo:", error);
-  //       });
-  //   };
-
-  //   func();
-  // }, []);
+  const [date, setDate] = useState(null);
+  const { user, isRegister, isVerification, userDetails, signOut } = useContext(AuthContext);
 
   const handleGetData = async () => {
     await API.graphql(graphqlOperation(listTodos))
@@ -120,51 +102,41 @@ function App() {
   };
 
   console.log(date, "lista meaa");
-  debugger;
 
+  if(isVerification && !user){
+    return <Navigate to="/verification"  />
+  }
+  else if(isRegister && !user){
+    return <Navigate to="/register"  />
+  }
+  else if(!user)
+  {
+    return <Navigate to="/signin"  />
+  }
   return (
     <div className="main">
-      {/* {!userDetails ? ( */}
-      {/* {!user ? (
-        <SignIn />
-      ) : ( */}
-      <>
-        <BrowserRouter>
-          {user && (
-            <>
-              <BrowserView>
-                <DesktopNavigation />
-              </BrowserView>
-              <MobileView>
-                <MobileNavigation />
-              </MobileView>
-              <Routes>
-                <Route path="home" element={<Home />} />
-                <Route path="my-account" element={<MyAccount />} />
-              </Routes>
-              <br />
-              <button onClick={handleGetData}>Get data</button>
-            </>
-          )}
+        {user && (
+          <>
+            <BrowserView>
+              <DesktopNavigation />
+            </BrowserView>
+            <MobileView>
+              <MobileNavigation />
+            </MobileView>
 
-          {/* <Route path="list" element={<CarList />} />
-              <Route path="add" element={<AddCar />} /> */}
-          <Routes>
-            <Route path="signin" element={<MyAccount />} />
-            <Route path="register" element={<Register />} />
-            <Route path="verification" element={<VerificationPage />} />
-            {/* <Route path="home" element={<Home />} />
-            <Route path="my-account" element={<MyAccount />} /> */}
-          </Routes>
-        </BrowserRouter>
+            <br />
+            <button onClick={handleGetData}>Get data</button>
+          </>
+        )}
+
         {/* <br />
         <Register />
         <br /> */}
-        {/* <VerificationPage />
+        {/* <br />
+        {!user && <VerificationPage />}
         <br /> */}
-        {!user && <SignIn />}
-      </>
-      {/* )} */}
+        {/* {!user && navigate('signin')} */}
+
     </div>
   );
 }

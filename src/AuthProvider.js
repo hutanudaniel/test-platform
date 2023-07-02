@@ -1,23 +1,25 @@
 import React, { createContext, useState, useEffect } from "react";
-import { API, Auth, Hub } from 'aws-amplify';
-// import { Auth } from '@aws-amplify/auth';
-// import { API} from '@aws-amplify/api';
-// import {Hub } from '@aws-amplify/';
+import { API, Auth, Hub, graphqlOperation } from "aws-amplify";
 import "./aws-amplify";
 import { CognitoUser } from "@aws-amplify/auth";
 import { getUser } from "./queries";
+import { createUser } from "./mutations";
 
-function User(username, email) {
-  this.username = username;
-  this.email = email;
-  // this.city = city;
-}
+// function User(username, email) {
+//   this.username = username;
+//   this.email = email;
+//   // this.city = city;
+// }
 
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
+  const [isRegister, setIsRegister] = useState(false);
+  const [isVerification, setIsVerification] = useState(false);
+
+
 
   const [loading, setLoading] = useState(true);
 
@@ -32,10 +34,40 @@ export function AuthProvider({ children }) {
 
         switch (event) {
           case "signIn":
-            // debugger;
-
             await fetchAuthUser();
             break;
+          case "signUp": {
+            try {
+              //   await API.graphql({
+              //     query: createUser,
+              //     variables: {
+              //       input: {
+              //         id: userSub,
+              //         username: user.username,
+              //         email: user.username,
+              //       },
+              //     },
+              //   });
+
+              const { userSub, username, user } = data;
+
+              const resp = await API.graphql(
+                graphqlOperation(createUser, {
+                  input: {
+                    id: userSub,
+                    username: user.username,
+                    email: user.username,
+                  },
+                })
+              ).then((response) => {
+                console.log("Todo created:", response.data.createUser);
+              });
+            } catch (err) {
+              console.log(err);
+            }
+
+            break;
+          }
           case "signOut":
             setUser(null);
             setUserDetails(null);
@@ -65,11 +97,8 @@ export function AuthProvider({ children }) {
 
   async function fetchAuthUser() {
     try {
-      debugger;
-
       const fetchedUser = await Auth.currentAuthenticatedUser();
       let userDynamoDb;
-
 
       if (fetchedUser) {
         setUser(fetchedUser);
@@ -96,7 +125,6 @@ export function AuthProvider({ children }) {
   }
 
   const signIn = async (email, password) => {
-    debugger;
     const user = await Auth.signIn({ username: email, password });
     return user;
   };
@@ -130,6 +158,10 @@ export function AuthProvider({ children }) {
         signOut,
         signUp,
         resendSignUp,
+        setIsRegister,
+        isRegister,
+        isVerification,
+        setIsVerification
       }}
     >
       {/* {loading? <Loading/>: children} */}

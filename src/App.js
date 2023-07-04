@@ -123,9 +123,9 @@ function App() {
             <MobileView>
               <MobileNavigation />
             </MobileView>
-
+{/* 
             <br />
-            <button onClick={handleGetData}>Get data</button>
+            <button onClick={handleGetData}>Get data</button> */}
           </>
         )}
 

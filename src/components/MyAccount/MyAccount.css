@@ -1,0 +1,12 @@
+.quiz{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.react-quiz-container{
+    /* width: 100%; */
+}

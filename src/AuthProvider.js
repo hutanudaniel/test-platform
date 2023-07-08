@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fetchAuthUser();
+    fetchAuthUser();
 
     const authListener = Hub.listen(
       "auth",

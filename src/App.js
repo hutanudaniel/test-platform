@@ -89,6 +89,8 @@ function App() {
   const [date, setDate] = useState(null);
   const { user, isRegister, isVerification, userDetails, signOut } = useContext(AuthContext);
 
+  // console.log(user, "user")
+
   const handleGetData = async () => {
     await API.graphql(graphqlOperation(listTodos))
       .then((response) => {

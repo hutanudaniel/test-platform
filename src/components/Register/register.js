@@ -46,6 +46,7 @@ function Register() {
       });
       setIsVerification(true);
       return <Navigate to='/verification'/>;
+      
     } catch (err) {
       console.log(err, "eroare la register");
     }

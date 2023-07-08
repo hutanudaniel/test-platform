@@ -1,9 +1,9 @@
 import React from "react";
 import { quiz } from '../../quiz';
 import Quiz from 'react-quiz-component';
-import './MyAccount.css'
+import './tests.css'
 
-function MyAccount() {
+function Tests() {
     return(
         <div className="quiz" >
             <Quiz className="main" quiz={quiz}/>
@@ -11,4 +11,4 @@ function MyAccount() {
     )
 }
 
-export default MyAccount;
+export default Tests;

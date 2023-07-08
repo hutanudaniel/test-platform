@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Routes, Route, Link, Navigate   } from "react-router-dom";
 import Home from "./components/Home/Home";
-import MyAccount from "./components/MyAccount/MyAccount";
+import Lessons from "./components/Lessons/Lessons";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
 import React, { useEffect, useState, useContext } from "react";
@@ -16,9 +16,9 @@ import { BrowserView, MobileView } from "react-device-detect";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import PersonIcon from "@mui/icons-material/Person";
+import MenuBookIcon  from "@mui/icons-material/MenuBook";
+import DocumentScannerIcon  from "@mui/icons-material/DocumentScanner";
+import ContactPageIcon  from "@mui/icons-material/ContactPage";
 import { AuthContext } from "./AuthProvider";
 
 const todo = { name: "My Todo", description: "This is my todo" };
@@ -56,28 +56,28 @@ function MobileNavigation() {
       className="mobile-navigation"
     >
       <BottomNavigationAction
-        label="Home"
+        label="Acasa"
         icon={<HomeIcon />}
         component={Link}
         to="/home"
       />
       <BottomNavigationAction
-        label="Search"
-        icon={<SearchIcon />}
+        label="Lectii"
+        icon={<MenuBookIcon  />}
         component={Link}
-        to="/home"
+        to="/lessons"
       />
       <BottomNavigationAction
-        label="Favorites"
-        icon={<FavoriteIcon />}
+        label="Teste"
+        icon={<DocumentScannerIcon  />}
         component={Link}
-        to="/my-account"
+        to="/tests"
       />
       <BottomNavigationAction
-        label="Profile"
-        icon={<PersonIcon />}
+        label="Contact"
+        icon={<ContactPageIcon />}
         component={Link}
-        to="/my-account"
+        to="/contact"
       />
     </BottomNavigation>
   );

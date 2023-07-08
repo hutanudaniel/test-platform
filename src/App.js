@@ -103,7 +103,7 @@ function App() {
       });
   };
 
-  console.log(date, "lista meaa");
+  // console.log(date, "lista meaa");
 
   if(isVerification && !user){
     return <Navigate to="/verification"  />

@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "../../AuthProvider";
+import { Navigate   } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
@@ -45,7 +46,7 @@ function SignIn() {
   //     });
   //   };
 
-  const { signIn, setIsRegister} = useContext(AuthContext);
+  const { signIn, setIsRegister, user} = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -63,6 +64,11 @@ function SignIn() {
 
     //   console.log(ee, "useer")
   };
+
+  if(user){
+    return <Navigate to="/"  />
+  }
+
 
   return (
     // <>
@@ -133,10 +139,10 @@ function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Button
               type="submit"
               fullWidth

@@ -9,7 +9,9 @@ import Register from "./components/Register/register";
 import SignIn from "./components/Signin/signin";
 import VerificationPage from "./components/VerificationPage/verificationPage";
 import Home from "./components/Home/Home";
-import MyAccount from "./components/MyAccount/MyAccount";
+import Lessons from "./components/Lessons/Lessons";
+import Tests from './components/Tests/tests';
+import Contact from './components/Contact/contact';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +22,10 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="my-account" element={<MyAccount />} />
+          <Route path="lessons" element={<Lessons />} />
+          <Route path="tests" element={<Tests />} />
+          <Route path="contact" element={<Contact />} />
+
           <Route path="signin" element={<SignIn />} />
           <Route path="register" element={<Register />} />
           <Route path="verification" element={<VerificationPage />} />

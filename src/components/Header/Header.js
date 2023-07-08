@@ -18,9 +18,14 @@ function Header() {
       <Toolbar>
         {/* <CarCrashIcon/> */}
         <Tabs value={0} textColor="inherit">
-          <Tab label="Home" to="/home" component={Link} />
+          <p>Test Platform Logo</p>
+          <Tab label="Acasa" to="/home" component={Link} />
+          <Tab label="Lectii" to="/lessons" component={Link} />
+
           {/*  component={Link} */}
-          <Tab label="MyAccount" to="/my-account" component={Link} />
+          <Tab label="Teste" to="/tests" component={Link} />
+          <Tab label="Contact" to="/contact" component={Link} />
+
           {/* <Tab label='Lista neagra' to="/list" /> */}
         </Tabs>
         {/* <Search>
@@ -32,7 +37,7 @@ function Header() {
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search> */}
-        <Button
+        {/* <Button
           sx={{
             marginLeft: "auto",
             marginRight: "10px",
@@ -43,9 +48,14 @@ function Header() {
           href="/my-account"
         >
           Contul meu
-        </Button>
+        </Button> */}
         <Button
-          sx={{ marginLeft: "right", backgroundColor: "white", color: "black" }}
+          sx={{
+            marginLeft: "auto",
+            marginRight: "10px",
+            backgroundColor: "white",
+            color: "black",
+          }}
           variant="contained"
           onClick={handleSignout}
         >

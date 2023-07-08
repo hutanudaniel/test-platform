@@ -22,6 +22,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Article from "../Article/article";
 // import { IconButton } from '@mui/material';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { BrowserView, isMobile } from 'react-device-detect';
 
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -32,10 +33,13 @@ function Lessons() {
   // const [secondary, setSecondary] = React.useState(false);
   const [article, setArticle] = React.useState(null);
 
+//   const df = isMobile();
+//   debugger;
+
   return (
     <div className="list">
       {!article && (
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+        <Box sx={{ flexGrow: 1, ...(isMobile ? { maxWidth: 752 } : { width: 752 })}}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">

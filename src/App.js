@@ -111,10 +111,10 @@ function App() {
   else if(isRegister && !user){
     return <Navigate to="/register"  />
   }
-  // else if(!user)
-  // {
-  //   // return <Navigate to="/signin"  />
-  // }
+  else if(!user)
+  {
+    return <Navigate to="/signin"  />
+  }
   return (
     <div className="main">
         {user && (

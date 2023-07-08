@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import swDev from "./swDev";
+// import swDev from "./swDev";
 import { AuthProvider } from "./AuthProvider";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Register from "./components/Register/register";
@@ -36,8 +36,8 @@ root.render(
   </React.StrictMode>
 );
 // swDev();
-if ("serviceWorker" in navigator) {
-  swDev();
-}
+// if ("serviceWorker" in navigator) {
+//   swDev();
+// }
 
 // sw.register();

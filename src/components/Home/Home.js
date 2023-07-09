@@ -4,8 +4,6 @@ import { BrowserView, isMobile } from "react-device-detect";
 import { Auth } from "aws-amplify";
 import Button from "@mui/material/Button";
 
-
-
 function Home() {
   const handleSignout = async (event) => {
     try {
@@ -17,6 +15,20 @@ function Home() {
 
   return (
     <div className="container">
+      {isMobile && (
+        <Button
+          sx={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            backgroundColor: "white",
+            color: "black",
+          }}
+          variant="contained"
+          onClick={handleSignout}
+        >
+          Deconectare
+        </Button>
+      )}
       <img src="presentation.png" alt="Imagine" />
       <div className="description">
         <p>Pași pentru a ajunge la finalizarea cu succes a unui test:</p>
@@ -39,21 +51,7 @@ function Home() {
           </li>
         </ol>
         <p>Mult succes!</p>
-        <br/>
-        {isMobile && (
-          <Button
-            sx={{
-              marginLeft: "auto",
-              marginRight: "10px",
-              backgroundColor: "white",
-              color: "black",
-            }}
-            variant="contained"
-            onClick={handleSignout}
-          >
-            Deconectare
-          </Button>
-        )}
+        <br />
       </div>
     </div>
   );

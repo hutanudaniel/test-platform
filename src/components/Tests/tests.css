@@ -3,9 +3,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.list{
+    max-width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
 
 }
+
 
 .react-quiz-container{
     /* width: 100%; */

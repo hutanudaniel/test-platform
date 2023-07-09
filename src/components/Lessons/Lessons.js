@@ -1,6 +1,4 @@
-// import React from "react";
-import { quiz } from "../../quiz";
-import Quiz from "react-quiz-component";
+
 import "./Lessons.css";
 import * as React from "react";
 import { styled } from "@mui/material/styles";

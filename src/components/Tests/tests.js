@@ -130,11 +130,7 @@ function Tests() {
       )}
     </div>
   );
-  // return(
-  //     <div className="quiz" >
-  //         <Quiz className="main" quiz={quiz}/>
-  //     </div>
-  // )
+
 }
 
 export default Tests;

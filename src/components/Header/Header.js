@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Tabs, Tab } from "@mui/material";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { Auth } from "aws-amplify";
+import './Header.css'
 
 function Header() {
   const handleSignout = async (event) => {
@@ -18,7 +19,7 @@ function Header() {
       <Toolbar>
         {/* <CarCrashIcon/> */}
         <Tabs value={0} textColor="inherit">
-          <p>Test Platform Logo</p>
+          <img src="TEP.PA.png" className="logo"/>
           <Tab label="Acasa" to="/home" component={Link} />
           <Tab label="Lectii" to="/lessons" component={Link} />
 

@@ -10,13 +10,13 @@ function Contact() {
       <h1 className="title">Contactează-ne</h1>
       <div className="contact-info">
         <p className="contact-detail">
-          <span className="detail-label">Telefon:</span> 123-456-789
+          <span className="detail-label">Telefon:</span> 0763221114
         </p>
         <p className="contact-detail">
-          <span className="detail-label">Email:</span> contact@example.com
+          <span className="detail-label">Email:</span> hutanudaniel77@yahoo.com
         </p>
         <p className="contact-detail">
-          <span className="detail-label">Adresă:</span> Strada Exemplu, Nr. 123, Orașul Tau, 12345
+          <span className="detail-label">Adresă:</span> Strada Libertatii, Nr. 123, Orașul Iasi
         </p>
       </div>
     </div>

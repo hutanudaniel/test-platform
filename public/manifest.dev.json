@@ -1,6 +1,6 @@
 {
-    "short_name": "Xauto",
-    "name": "Xauto - auto Robert",
+    "short_name": "TestPlt",
+    "name": "Test platform - aplicatie pentru teste pe orice device",
     "icons": [
       {
         "src": "/images/icons/app-icon-48x48.png",

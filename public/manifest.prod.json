@@ -1,52 +1,51 @@
 {
-    "short_name": "Xauto",
-    "name": "Xauto - auto Robert",
-    "icons": [
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-48x48.png",
-        "type": "image/png",
-        "sizes": "48x48"
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-96x96.png",
-        "type": "image/png", 
-        "sizes": "96x96"
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-144x144.png",
-        "type": "image/png", 
-        "sizes": "144x144"
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-192x192.png", 
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-256x256.png",
-        "type": "image/png",
-        "sizes": "256x256" 
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-384x384.png",
-        "type": "image/png",
-        "sizes": "384x384"
-      },
-      {
-        "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-512x512.png", 
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-   ],
-    "start_url": "https://main.d2czrm0d7jxybl.amplifyapp.com/index.html",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "scope": ".",
-    "orientation": "portrait-primary",
-    "description": "A simple app example",
-    "dir": "lfr",
-    "lang": "en-US",
-    "mobile-web-app-capable": "yes"
-  }
-  
+  "short_name": "TestPlt",
+  "name": "Test platform - aplicatie pentru teste pe orice device",
+  "icons": [
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "https://main.d2czrm0d7jxybl.amplifyapp.com/images/icons/app-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://main.d2czrm0d7jxybl.amplifyapp.com/index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "scope": ".",
+  "orientation": "portrait-primary",
+  "description": "A simple app example",
+  "dir": "lfr",
+  "lang": "en-US",
+  "mobile-web-app-capable": "yes"
+}

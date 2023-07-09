@@ -21,7 +21,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FolderIcon from "@mui/icons-material/Folder";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Article from "../Article/article";
 // import { IconButton } from '@mui/material';
@@ -63,7 +63,7 @@ function Tests() {
                   <ListItem onClick={() => setTest(quiz5)}>
                     <ListItemAvatar>
                       <Avatar>
-                        <FolderIcon />
+                        <AssignmentIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
@@ -74,7 +74,7 @@ function Tests() {
                   <ListItem onClick={() => setTest(quiz3)}>
                     <ListItemAvatar>
                       <Avatar>
-                        <FolderIcon />
+                        <AssignmentIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Matematica" secondary={"5 lectii"} />
@@ -82,7 +82,7 @@ function Tests() {
                   <ListItem onClick={() => setTest(quiz1)}>
                     <ListItemAvatar>
                       <Avatar>
-                        <FolderIcon />
+                        <AssignmentIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
@@ -93,7 +93,7 @@ function Tests() {
                   <ListItem onClick={() => setTest(quiz2)}>
                     <ListItemAvatar>
                       <Avatar>
-                        <FolderIcon />
+                        <AssignmentIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Istorie" secondary={"5 intrebari"} />
@@ -101,7 +101,7 @@ function Tests() {
                   <ListItem onClick={() => setTest(quiz4)}>
                     <ListItemAvatar>
                       <Avatar>
-                        <FolderIcon />
+                        <AssignmentIcon />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText

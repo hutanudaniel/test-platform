@@ -22,13 +22,25 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
+          <Route path="home/" element={<Home />} />
           <Route path="lessons" element={<Lessons />} />
+          <Route path="lessons/" element={<Lessons />} />
           <Route path="tests" element={<Tests />} />
+          <Route path="tests/" element={<Tests />} />
+
           <Route path="contact" element={<Contact />} />
+          <Route path="contact/" element={<Contact />} />
+
 
           <Route path="signin" element={<SignIn />} />
+          <Route path="signin/" element={<SignIn />} />
+
           <Route path="register" element={<Register />} />
+          <Route path="register/" element={<Register />} />
+
           <Route path="verification" element={<VerificationPage />} />
+          <Route path="verification/" element={<VerificationPage />} />
+
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
       </BrowserRouter>

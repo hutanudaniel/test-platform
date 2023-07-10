@@ -34,7 +34,7 @@ function Home() {
         <p>Pași pentru a ajunge la finalizarea cu succes a unui test:</p>
         <ol>
           <li>
-            În funcție de devisul folosit aveți în partea de jos sau sus meniul
+            În funcție de device-ul folosit aveți în partea de jos sau sus meniul
             aplicației;
           </li>
           <li>Parcurgeți mediul de învățare aflat în butonul "Lecții";</li>

@@ -6,7 +6,7 @@ export const quiz5 =  {
     
     Cititi cu atenție fiecare întrebare și analizați toate opțiunile înainte de a selecta răspunsul final. Răspunsurile trebuie să fie precise și complete, iar răspunsul corect este unul singur.
     
-    Rezolvați testul într-un mediu liniștit și fără distragere pentru a vă putea concentra adecvat. După finalizarea testului, veți primi rezultatele și veți putea evalua nivelul cunoștințelor dumneavoastră în materia [numele materiei].
+    Rezolvați testul într-un mediu liniștit și fără distragere pentru a vă putea concentra adecvat. După finalizarea testului, veți primi rezultatele și veți putea evalua nivelul cunoștințelor dumneavoastră în materia Limba și Literatura Română.
     
     Succes în rezolvarea testului și sperăm că vă va ajuta să vă consolidați cunoștințele în materia Limba și Literatura Română!`,
     "nrOfQuestions": "5",

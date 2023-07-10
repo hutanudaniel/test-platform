@@ -1,0 +1,32 @@
+.file-viewer-container {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    z-index: 0;
+
+  }
+
+  .pg-viewer-wrapper .document-container{
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+  }
+  #docx{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+  }
+
+  #pg-viewer{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+  }
+
+  .pg-viewer-wrapper{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+  }

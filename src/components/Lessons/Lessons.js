@@ -32,7 +32,7 @@ function Lessons() {
   const [article, setArticle] = React.useState(null);
 
   //   const df = isMobile();
-  //   debugger;
+    // debugger;
 
   return (
     <div className="list">
@@ -55,7 +55,7 @@ function Lessons() {
                     onClick={() =>
                       setArticle({
                         title: "Limba si literatura romana",
-                        text: "texxhgchjvmhvmvmv ihdfsg rgdfg dfg df gdf g dr g retg er ger ge  gre t",
+                        file: "romana.docx",
                       })
                     }
                   >
@@ -73,7 +73,7 @@ function Lessons() {
                     onClick={() =>
                       setArticle({
                         title: "Matematica",
-                        text: "texxhgchjvmhvmvmv ihdfsg rgdfg dfg df gdf g dr g retg er ger ge  gre t",
+                        file: "matematica.docx",
                       })
                     }
                   >
@@ -88,7 +88,8 @@ function Lessons() {
                     onClick={() =>
                       setArticle({
                         title: "Geografie",
-                        text: "texxhgchjvmhvmvmv ihdfsg rgdfg dfg df gdf g dr g retg er ger ge  gre t",
+                        file: "GEOGRAFIE.docx",
+
                       })
                     }
                   >
@@ -102,8 +103,9 @@ function Lessons() {
                   <ListItem
                     onClick={() =>
                       setArticle({
-                        title: "Engleza",
-                        text: "texxhgchjvmhvmvmv ihdfsg rgdfg dfg df gdf g dr g retg er ger ge  gre t",
+                        title: "Biologie",
+                        file: "BIOLOGIE.docx",
+
                       })
                     }
                   >
@@ -112,13 +114,13 @@ function Lessons() {
                         <FolderIcon />
                       </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Engleza" secondary={"3 lectii"} />
+                    <ListItemText primary="Biologie" secondary={"3 lectii"} />
                   </ListItem>
                   <ListItem
                     onClick={() =>
                       setArticle({
-                        title: "Stiintele naturii",
-                        text: "texxhgchjvmhvmvmv ihdfsg rgdfg dfg df gdf g dr g retg er ger ge  gre t",
+                        title: "Istorie",
+                        file: "ISTORIE.docx",
                       })
                     }
                   >
@@ -128,11 +130,11 @@ function Lessons() {
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
-                      primary="Stiintele naturii"
+                      primary="Istorie"
                       secondary={"3 lectii"}
                     />
                   </ListItem>
-                  <ListItem
+                  {/* <ListItem
                     onClick={() =>
                       setArticle({
                         title: "Franceza",
@@ -146,7 +148,7 @@ function Lessons() {
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Franceza" secondary={"3 lectii"} />
-                  </ListItem>
+                  </ListItem> */}
                   {/* )} */}
                 </List>
               </Demo>
@@ -162,7 +164,7 @@ function Lessons() {
             <p> Inapoi</p>
           </IconButton>
 
-          <Article text={article.text} title={article.title} />
+          <Article file={article.file} title={article.title} />
         </div>
       )}
     </div>
